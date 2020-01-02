@@ -1,5 +1,18 @@
 ## 这是一个仿QQ聊天模拟器
 
+### 项目启动
+
+准备：
+
++ node环境
++ mongodb
+
+启动：
+
++ 启动mongodb
++ yarn server
++ yarn start
+
 ### 技术栈
 
 + Typescript
@@ -40,8 +53,6 @@
 简单的结合nodejs即可实现
 
 这里使用关键字分别为 userid 和 groupid
-
-<img src="/Users/xueee/Library/Containers/com.tencent.qq/Data/Library/Application Support/QQ/Users/505569537/QQ/Temp.db/552A97DE-F240-4E9B-A4DA-4C429E5D1F98.png" alt="552A97DE-F240-4E9B-A4DA-4C429E5D1F98" style="zoom:50%;" />
 
 #### 添加功能
 
@@ -101,9 +112,9 @@ socket.on('msg', function (data) {
 io.to(roomid).emit('msg', data)
 ```
 
-所以，如果用户同时处于多个room中时，可能收到多个用户的消息，这样就需要处理消息数据。我不是很想这样做，就只允许用户加入一个room，当前用户发送的消息能够即时的显示在聊天界面中，而其它用户发送的消息则会显示一个未读消息的badge，当然，所有的聊天信息都会存储到数据库中，当我们切换好友的时候，会触发请求聊天内容的函数，并将获得的信息存储到同一个对象中。<img src="/Users/xueee/Library/Containers/com.tencent.qq/Data/Library/Application Support/QQ/Users/505569537/QQ/Temp.db/A6669A3C-1CBD-4125-8106-1186B3EB9853.png" alt="A6669A3C-1CBD-4125-8106-1186B3EB9853" style="zoom:50%;" />
+所以，如果用户同时处于多个room中时，可能收到多个用户的消息，这样就需要处理消息数据。我不是很想这样做，就只允许用户加入一个room，当前用户发送的消息能够即时的显示在聊天界面中，而其它用户发送的消息则会显示一个未读消息的badge，当然，所有的聊天信息都会存储到数据库中，当我们切换好友的时候，会触发请求聊天内容的函数，并将获得的信息存储到同一个对象中。
 
-<img src="/Users/xueee/Library/Containers/com.tencent.qq/Data/Library/Application Support/QQ/Users/505569537/QQ/Temp.db/0563D759-34B2-48EE-9494-EFD4AEFE54EF.png" alt="0563D759-34B2-48EE-9494-EFD4AEFE54EF" style="zoom:50%;" />
+
 
 #### 建群功能
 

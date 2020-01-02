@@ -1,0 +1,63 @@
+.user-container {
+    position: relative;
+    &:hover > .triangle,
+    &:hover > .user-content {
+        visibility: visible;
+        opacity: 1;
+    }
+    .user-avatar {
+        width: 44px;
+        height: 44px;
+        background-color: white;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 50%;
+    }
+    .triangle {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        border: 8px solid;
+        border-color: transparent transparent #d6ae8e;
+        transform: translateX(calc(~'-50%' + 22px));
+        z-index: 4;
+        transition: opacity .5s;
+    }
+    .user-content {
+        position: absolute;
+        visibility: hidden;
+        margin-top: 16px;
+        opacity: 0;
+        z-index: 3;
+        background-color: #ffffff;
+        white-space: nowrap;
+        transform: translateX(calc(~'-50%' + 22px));
+        padding: 5px 15px 10px;
+        border-radius: 3px;
+        box-shadow: 0 0 7px 1px #d6ae8e;
+        transition: opacity .5s;
+        p {
+            color: #FF6E00;
+            line-height: normal;
+            margin: 0;
+            margin-top: 5px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #f5dfcf;
+            cursor: pointer;
+        }
+    }
+}
+
+.addfriends {
+    .searchresult {
+        display: flex;
+        justify-content: space-between;
+        min-height: 200px;
+        border: 2px solid #dbd9d9;
+        margin-top: 20px;
+        padding: 10px;
+    }
+}

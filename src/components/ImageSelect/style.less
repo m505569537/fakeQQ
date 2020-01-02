@@ -1,0 +1,32 @@
+.image-select {
+    label {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 130px;
+        height: 130px;
+        border: 1px dashed #e9e9e9;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all .5s;
+        &:hover {
+            border-color: #FF6E00;
+            // border-color: #1DA57A;
+        }
+        div {
+            width: 110px;
+            height: 110px;
+            position: absolute;
+            display: none;
+            top: 9px;
+            left: 9px;
+            border-radius: 5px;
+            background-color: white;
+            background-size: 100%;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+        }
+    }
+}

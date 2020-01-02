@@ -1,0 +1,28 @@
+.fri-noc {
+    padding: 4px;
+    .fri-task {
+        border: 2px solid #fa9e57;
+        // box-shadow: 0 0 3px 1px #ff6e00;
+        padding: 5px 10px 15px;
+        margin-bottom: 25px;
+        border-radius: 5px;
+        &::after {
+            content: ' ';
+            clear: both;
+            display: block;
+        }
+        p {
+            font-size: 18px;
+            margin: 0;
+            text-indent: 10px;
+            span {
+                color: #ff6e00;
+                cursor: pointer;
+            }
+        }
+        button {
+            float: right;
+            margin: 0 10px;
+        }
+    }
+}

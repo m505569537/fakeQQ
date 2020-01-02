@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "sourceMap": true,
+      "noImplicitAny": false,
+      "module": "ESNext",
+      "moduleResolution": "node",
+      "target": "ESNext",
+      "jsx": "react",
+      "esModuleInterop": true,
+    },
+    "include": [
+      "./src/**/*"
+    ]
+}

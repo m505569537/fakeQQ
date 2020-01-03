@@ -5,10 +5,6 @@ const { FriendsListModel, GroupsListModel, GroupModal, UserModel, ChatModel, Tas
 
 const filter = {__v: 0, password: 0}
 
-router.get('/test', (ctx, next) => {
-    ctx.body = 'hh'
-})
-
 // 与登录注册相关的使用token
 // 设计到具体业务逻辑的使用userid
 
@@ -186,13 +182,6 @@ router.post('/addfriendorgroup', async (ctx, next) => {
     const { type, from, to, taskData, taskid } = ctx.request.body
     let errcode = 1, data = {}
     if(type === 'addfriend'){
-        // try {
-        //     await FriendsListModel.updateOne({ userid }, { friends: friendslist })
-        //     errcode = 0
-        //     message = '添加成功'
-        // } catch (error) {
-        //     message = '添加失败'
-        // }
         const task = new TaskModel({ from, to, taskData, taskid })
         try {
             await task.save()

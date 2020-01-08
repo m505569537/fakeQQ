@@ -142,6 +142,9 @@ const Socket = ():ReactNode => {
             <Header style={{ backgroundColor: 'rgba(0,0,0,.1)', display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
                 <div className='user-container'>
                     <div className='user-avatar' style={{ backgroundImage: `url(${user ? user.avatar : ''})` }}></div>
+                    {
+                        tasks && tasks.length > 0 ? <div className='task-status-dot' /> : null
+                    }
                     <div className="triangle"></div>
                     <div className='user-content'>
                         <p onClick={() => setInfoVisible(true)}>个人信息</p>

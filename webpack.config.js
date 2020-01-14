@@ -14,8 +14,8 @@ module.exports = (env) => {
             app: './src/index.js'
         },
         output: {
-            filename: env === 'development' ? 'js/[name].dev.js' : '[name].[chunkhash].js',
-            chunkFilename: env === 'development' ? 'js/[name].dev.js' : '[name].[chunkhash].js',
+            filename: env === 'development' ? 'js/[name].dev.js' : '[name].[chunkhash:8].js',
+            chunkFilename: env === 'development' ? 'js/[name].dev.js' : '[name].[chunkhash:8].js',
             path: path.resolve(__dirname, 'dist')
         },
         devServer: {
@@ -34,7 +34,7 @@ module.exports = (env) => {
                     test: /\.(css|less)$/,
                     use: [
                         'css-hot-loader',  //实现样式文件的热更新
-                        MiniCssExtractPlugin.loader,
+                        MiniCssExtractPlugin.loader,    //该插件可以将css从js文件中抽离出来，但也失去了同js一起热更新的能力，所以只能再使用css-hot-loader插件提供css热更新功能
                         // 'style-loader',
                         'css-loader',
                         'postcss-loader',

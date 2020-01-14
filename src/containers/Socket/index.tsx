@@ -149,6 +149,7 @@ const Socket = ():ReactNode => {
                     <div className='user-content'>
                         <p onClick={() => setInfoVisible(true)}>个人信息</p>
                         <p onClick={() => setNocVisible(true)}>消息通知</p>
+                        <p onClick={() => { Cookie.remove('token'); window.location.reload() }}>退出</p>
                     </div>
                 </div>
             </Header>
